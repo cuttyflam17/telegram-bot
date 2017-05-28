@@ -8,7 +8,6 @@ var bodyParser = require('body-parser');
 var config = require(__dirname + '/config');
 
 var app = express();
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -21,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var routes = glob.sync(config.ROOT + '/routes/*.js');
+var routes = glob.sync(config.MAIN_PATH + '/routes/*.js');
   routes.forEach(function(route) {
     require(route)(app);
 });
