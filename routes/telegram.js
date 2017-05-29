@@ -8,7 +8,7 @@ module.exports = function(app) {
   router.post('/', function(req, res) {
   	console.log(req.body);
   	bot.processUpdate(req.body);
-  	res.end();
+  	res.sendStatus(200);
   })
 
   app.use('/telegram', router);

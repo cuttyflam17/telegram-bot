@@ -7,13 +7,12 @@ var bot = new TelegramBot(token);
 
 bot.setWebHook(`${url}/telegram`);
 
-bot.on('message', function(msg) {
-  bot.sendMessage(msg.chat.id, 'Да, я с детства в аду, стресс, я тону....');
-});
-
 bot.onText('/\/start/', function(msg) {
 	bot.sendMessage(msg.chat.id, answer.welcome_text['ru']);
 })
 
+bot.on('message', function(msg) {
+  bot.sendMessage(msg.chat.id, 'Да, я с детства в аду, стресс, я тону....');
+});
 
 module.exports = bot;
