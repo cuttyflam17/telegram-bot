@@ -7,8 +7,9 @@ module.exports = function(app) {
 	var config = app.get('config');
   router.post('/', function(req, res) {
   	console.log(req.body);
+  	return res.end();
   	bot.processUpdate(req.body);
-  	res.sendStatus(200);
+  	
   })
 
   app.use('/telegram', router);
