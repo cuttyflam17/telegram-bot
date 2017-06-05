@@ -7,9 +7,9 @@ var bot = new TelegramBot(token);
 
 bot.setWebHook(`${url}/telegram`);
 
-bot.onText('/\/start/', function(msg) {
+/*bot.onText('/\/start/', function(msg) {
 	bot.sendMessage(msg.chat.id, answer.welcome_text['ru']);
-})
+})*/
 
 bot.on('message', function(msg) {
   bot.sendMessage(msg.chat.id, 'Да, я с детства в аду, стресс, я тону....');
