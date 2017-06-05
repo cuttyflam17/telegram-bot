@@ -12,6 +12,7 @@ bot.setWebHook(`${url}/telegram`);
 })*/
 
 bot.on('message', function(msg) {
+	console.log("ping");
   bot.sendMessage(msg.chat.id, 'Да, я с детства в аду, стресс, я тону....').catch(function(e) {
   	console.log(e);
   });
