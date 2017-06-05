@@ -7,7 +7,7 @@ var bot = new TelegramBot(token);
 
 bot.setWebHook(`${url}/telegram`);
 
-bot.onText('/\/start/', function(msg) {
+bot.onText(/\/start/, function(msg, match) {
 	console.log('start');
 	console.log(answer.welcome_text['ru'])
 	bot.sendMessage(msg.chat.id, answer.welcome_text['ru']);
