@@ -7,7 +7,7 @@ module.exports = function(app) {
 	var config = app.get('config');
   router.post('/', function(req, res) {
   	console.log(req.body);
-  	bot.proccessUpdate(req.body);
+  	bot.processUpdate(req.body);
   	res.sendStatus(200);
   })
 
