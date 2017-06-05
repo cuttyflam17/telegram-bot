@@ -8,13 +8,13 @@ var bot = new TelegramBot(token);
 bot.setWebHook(`${url}/telegram`);
 
 bot.onText(/\/start/, function(msg, match) {
-	console.log('start');
-	console.log(answer.welcome_text['ru'])
-	bot.sendMessage(msg.chat.id, answer.welcome_text['ru']);
+	bot.sendMessage(msg.chat.id, answer.welcome_text['ru']).then(function() {
+		bot.closeWebHook();
+	});
 })
 
 bot.on('message', function(msg) {
-  bot.sendMessage(msg.chat.id, 'Да, я с детства в аду, стресс, я тону....').catch(function(e) {
+  bot.sendMessage(msg.chat.id, 'Да, я с детвства в аду, стресс, я тону....').catch(function(e) {
   	console.log(e);
   });
 });
